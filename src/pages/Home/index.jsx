@@ -1,9 +1,13 @@
 import React from 'react'
 import Simulado from '../../components/Simulado'
+import {SimuladoContextProvider} from '../../context/SimuladoContext'
+
 
 const home = () => {
   return (
-    <Simulado/>
+    <SimuladoContextProvider>
+      <Simulado/>
+    </SimuladoContextProvider>
   )
 }
 

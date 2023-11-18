@@ -6,6 +6,7 @@ const paletaSuave = {
     corDestaque: '#b5d8a6',    // Verde Pastel
     corFundo: '#f0f0f0',       // Cinza Claro
     corTexto: '#333333',       // Preto
+    corErrado :'#ff7f7f',      // Vermelho
   };
 
 
@@ -67,11 +68,17 @@ export const ContainerButton = styled.div`
 `;
 
 export const Alternativa = styled.div`
-    border: solid 1px;
+    cursor: pointer;
+    border: ${(props)=> props.correct===1?"solid 1.5px green":
+                        props.correct===2?"solid 1.5px red":"solid 1px"};
+    text-align: center;
     border-radius: 20px;
     padding: 0.5rem;
     margin: 15px;
-    box-shadow: 8px 8px 4px rgb(0 0 0 / 50%);
+    box-shadow: ${(props)=> props.select?"4px 4px 2px rgb(0 0 0 / 50%)":"8px 8px 4px rgb(0 0 0 / 50%)"};
+    background-color: ${(props)=>  props.correct===1?paletaSuave.corDestaque:
+                                    props.correct===2?paletaSuave.corErrado:  
+                                    props.select ? paletaSuave.corPrincipal :paletaSuave.corSecundaria};
 `;
 
 
@@ -81,7 +88,8 @@ export const Button = styled.button`
     height: 45px;
     border-radius: 15px;
     border: solid 0px;
-    background-color: ${(props) => props.bgColor || paletaSuave.corDestaque};
+    background-color: ${(props) => props.bgcolor || paletaSuave.corDestaque};
     box-shadow: 4px 4px 4px rgb(0 0 0 / 50%);
     margin-left: 0.9rem;
+    cursor: pointer;
 `;

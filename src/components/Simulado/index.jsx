@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {q} from '../../entities/entities'
 import {
   Container,
   Header,
@@ -11,36 +12,87 @@ import {
   HeaderLabel,
   Button
 } from './styles'
+import { useSimuladoContext } from '../../hook/context/useSimuladoContext'
 
 const Simulado = () => {
+  const {simulado} = useSimuladoContext();
+  const [questaoAtual,setQuestaoAtual] =useState(q);
+  const [numeroQuestao,setNumeroQuestao] = useState(0);
+  const [totalQuestao, setTotalQuestao] = useState(0);
+  const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
+  const [stageComentario,setStageComentario] = useState([]);
+  const [acertos,setAcertos] = useState([]);
+
+  const handleSelectAlternativa =(index)=>{
+    let aux=[...alternativaSelecionada];
+    aux[numeroQuestao]=index;
+    setAlternativaSelecionada(aux);
+  }
+
+  useEffect(()=>{
+    try{
+      setQuestaoAtual(simulado.questoes[numeroQuestao]);
+      setTotalQuestao(simulado.questoes.length);
+      
+    }catch{
+      setQuestaoAtual(q);
+    }
+  },[numeroQuestao])
+  
+  const handleResponder =()=>{
+    let aux=[...stageComentario];
+    aux[numeroQuestao]= questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ;
+   
+    setStageComentario(aux);
+    console.log(aux);
+  }
+
+  const handleVoltar=()=>{
+    if(numeroQuestao>0)
+      setNumeroQuestao(numeroQuestao-1);
+  }
+
+  const handleProximo=()=>{
+    if(numeroQuestao<(totalQuestao-1)){  
+    setNumeroQuestao(numeroQuestao+1);
+   }else{
+    //todo modal terminar
+   }
+
+  }
+
   return (
     <Container>
       <Header>
-        <HeaderLabel>Questão 5 de 10</HeaderLabel>
+        <HeaderLabel>Questão {numeroQuestao+1} de {totalQuestao}</HeaderLabel>
         <HeaderLabel> 10:52</HeaderLabel>
       </Header>
       <Informacoes>
-        <InfoLabel>disciplina: Portugues </InfoLabel>
-        <InfoLabel>Assunto: Verbos </InfoLabel>
-        <InfoLabel> Banca: CESP </InfoLabel>
-        <InfoLabel>Concurso: Prefeitura de campo mourão </InfoLabel>
-        <InfoLabel>Ano: 2020 </InfoLabel>
+        <InfoLabel>Disciplina: {questaoAtual.disciplina} </InfoLabel>
+        <InfoLabel>Assunto: {questaoAtual.assunto} </InfoLabel>
+        <InfoLabel> Banca: {questaoAtual.banca} </InfoLabel>
+        <InfoLabel>Concurso: {questaoAtual.concurso} </InfoLabel>
+        <InfoLabel>Ano: {questaoAtual.ano} </InfoLabel>
       </Informacoes>      
-      <Enunciado>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Enunciado>
+      <Enunciado>{questaoAtual.enunciado} </Enunciado>
       <BoxAlternativas>
-        <Alternativa>
-          s been the industry's standard dummy text ever since the 1500s, 
-          when an unknown printer took a galley of type and scrambled it to make 
-          a type specimen book.  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </Alternativa>
-        <Alternativa>It has survived not only five centuries, but also the leap 
-          into electronic typesetting, remaining essentially unchanged.</Alternativa>
-        <Alternativa> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Alternativa>
-        <Alternativa> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Alternativa>
+        {
+          questaoAtual.alternativas.map((a,index)=>
+            <Alternativa 
+              key={index}
+              correct={ a.is_correct && stageComentario[numeroQuestao] ? 1 :
+                        stageComentario[numeroQuestao]===2 && index===alternativaSelecionada[numeroQuestao] ? 2 
+                        : 3 }
+              select={index===alternativaSelecionada[numeroQuestao]} 
+              onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(index)}>
+                {a.alternativa}
+            </Alternativa>)
+        }
       </BoxAlternativas>
       <ContainerButton>
-        <Button bgColor="#ffffff">Voltar</Button>
-        <Button>Responder</Button>
+        <Button onClick={handleVoltar} bgcolor="#ffffff">Voltar</Button>
+        <Button onClick={handleResponder}>Responder</Button>
+        <Button onClick={handleProximo} bgcolor="#ffffff">{numeroQuestao<(totalQuestao-1)?"Proxima":"Finalizar"}</Button>
       </ContainerButton>
     </Container>
   )
