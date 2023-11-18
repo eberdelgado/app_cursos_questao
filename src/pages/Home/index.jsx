@@ -1,14 +1,10 @@
 import React from 'react'
-import Simulado from '../../components/Simulado'
-import {SimuladoContextProvider} from '../../context/SimuladoContext'
+import PageBody from '../../components/PageBody'
 
-
-const home = () => {
+const HomePage = () => {
   return (
-    <SimuladoContextProvider>
-      <Simulado/>
-    </SimuladoContextProvider>
+    <PageBody/>
   )
 }
 
-export default home
+export default HomePage

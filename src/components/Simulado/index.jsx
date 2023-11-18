@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {q} from '../../entities/entities'
+import { paletaSuave } from '../../entities/paleta'
 import {
   Container,
   Header,
@@ -21,8 +22,7 @@ const Simulado = () => {
   const [totalQuestao, setTotalQuestao] = useState(0);
   const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
   const [stageComentario,setStageComentario] = useState([]);
-  const [acertos,setAcertos] = useState([]);
-
+  
   const handleSelectAlternativa =(index)=>{
     let aux=[...alternativaSelecionada];
     aux[numeroQuestao]=index;
@@ -90,9 +90,9 @@ const Simulado = () => {
         }
       </BoxAlternativas>
       <ContainerButton>
-        <Button onClick={handleVoltar} bgcolor="#ffffff">Voltar</Button>
+        <Button onClick={handleVoltar} bgcolor={paletaSuave.corSecundaria}>Voltar</Button>
         <Button onClick={handleResponder}>Responder</Button>
-        <Button onClick={handleProximo} bgcolor="#ffffff">{numeroQuestao<(totalQuestao-1)?"Proxima":"Finalizar"}</Button>
+        <Button onClick={handleProximo} bgcolor={paletaSuave.corSecundaria}>{numeroQuestao<(totalQuestao-1)?"Proxima":"Finalizar"}</Button>
       </ContainerButton>
     </Container>
   )

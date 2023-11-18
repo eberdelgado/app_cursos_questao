@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-const paletaSuave = {
+import { paletaSuave } from "../../entities/paleta";
+/*const paletaSuave = {
     corPrincipal: '#8ac4d0',   // Azul Pastel
     corSecundaria: '#f8eceb',  // Rosa Pálido
     corDestaque: '#b5d8a6',    // Verde Pastel
@@ -8,7 +8,7 @@ const paletaSuave = {
     corTexto: '#333333',       // Preto
     corErrado :'#ff7f7f',      // Vermelho
   };
-
+*/
 
 export const Container = styled.div`
     font-size: 20px;
