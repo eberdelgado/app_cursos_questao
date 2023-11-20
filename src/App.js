@@ -4,7 +4,6 @@ import HomePage from "./pages/Home"
 
 function App() {
   return (
-    <div id="b">
       <Router>
         <Routes>
           <Route path="/Simulado" element={<SimuladoPage />} /> 
@@ -12,7 +11,7 @@ function App() {
         
         </Routes>
       </Router>
-    </div>
+    
   );
 }
 

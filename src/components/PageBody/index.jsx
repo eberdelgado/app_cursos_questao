@@ -1,15 +1,18 @@
 import React from 'react'
 import {
     Page,
-    Menu,
     Content,
 } from './styles'
+import MeusCursos from '../MeusCursos'
+import Menu from '../Menu'
 
 const PageBody = () => {
   return (
     <Page>
-        <Menu></Menu>
-        <Content>b</Content>
+        <Menu/>
+        <Content>
+          <MeusCursos/>
+        </Content>
     </Page>
   )
 }

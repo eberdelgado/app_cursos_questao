@@ -14,18 +14,12 @@ export const paletaAzul = {
     VerdeMusgo: '#ADFF2F',
   }
 
-export const Page = styled.div`
-    display: grid;
-    grid-template-columns: 15% 85%; 
-    height: 100%;
-`;
-
-export const Content = styled.div`
-    background-color: ${paletaAzul.AzulClaro};
-    //margin-top: 10px;
-    //margin-bottom: 10px;
-    margin: 10px 10px 10px 5px;
-    box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
-    border-radius: 0px 10px 10px 0px;
-
+export const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    background-color: ${paletaAzul.CinzaClaro};
+    width: 98%;
+    height: 96%;
+    margin-top: 0.5%;
+    margin-left: 1%;
 `;

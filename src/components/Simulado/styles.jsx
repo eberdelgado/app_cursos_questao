@@ -10,6 +10,7 @@ import { paletaSuave } from "../../entities/paleta";
   };
 */
 
+
 export const Container = styled.div`
     font-size: 20px;
     font-family: serif;
@@ -19,14 +20,14 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-display: grid;
-grid-template-columns: 80% 20%;
-margin: 1rem;
-margin-bottom: 0px ;
-border-bottom: solid 2px;
-> *:not(:last-child) {
-        border-right: 1px solid #000; 
-     }
+    display: grid;
+    grid-template-columns: 80% 20%;
+    margin: 1rem;
+    margin-bottom: 0px ;
+    border-bottom: solid 2px;
+    > *:not(:last-child) {
+            border-right: 1px solid #000; 
+        }
 `;
 
 export const Informacoes = styled.div`
