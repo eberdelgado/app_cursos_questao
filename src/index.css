@@ -4,7 +4,7 @@ body{
     padding: 0; /* Para remover o padding padrão do corpo */
     /*font-family: 'Arial', sans-serif; /* Especifica a fonte padrão para o corpo */
     font-family: serif;
-    ;
+    height: 100vh;
     color: #333333;
   }
 

@@ -16,6 +16,11 @@ const MeusCrusos = () => {
         <Curso/>
         <Curso/>
         <Curso/>
+        <Curso/>
+        <Curso/>
+        <Curso/>
+        <Curso/>
+        <Curso/>
     </Container>
   )
 }

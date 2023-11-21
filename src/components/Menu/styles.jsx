@@ -20,19 +20,20 @@ export const paletaAzul = {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    //border-right: solid 2px;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
-    //margin-top: 10px;
-    //margin-bottom: 10px;
     margin: 10px 0px 10px 10px;
     padding-top: 10%;
     border-radius: 10px 00px 00px 10px;
+    height: 94vh;
 `;
 
 
 export const LabelOption = styled.label`
     //border: solid 1px;
-    width: 80%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: ${(props)=> (props.active?"80%":"fit-content")};
     border-radius: 50px;
     padding: 5%;
     margin-bottom: 10%;

@@ -17,6 +17,7 @@ export const Container = styled.div`
     //border: solid 1px;
     margin: 15px;
     width: fit-content;
+    
     height: 200px;
     background-color: white;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);

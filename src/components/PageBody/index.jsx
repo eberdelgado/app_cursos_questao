@@ -3,15 +3,14 @@ import {
     Page,
     Content,
 } from './styles'
-import MeusCursos from '../MeusCursos'
 import Menu from '../Menu'
 
-const PageBody = () => {
+const PageBody = (props) => {
   return (
     <Page>
-        <Menu/>
+        <Menu page={props.page}/>
         <Content>
-          <MeusCursos/>
+          {props.children}
         </Content>
     </Page>
   )

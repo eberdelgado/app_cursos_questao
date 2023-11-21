@@ -3,7 +3,7 @@ import PageBody from '../../components/PageBody'
 
 const HomePage = () => {
   return (
-    <PageBody/>
+    <PageBody page={0}/>
   )
 }
 

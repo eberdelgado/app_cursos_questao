@@ -17,7 +17,7 @@ export const paletaAzul = {
 export const Page = styled.div`
     display: grid;
     grid-template-columns: 15% 85%; 
-    height: 100%;
+    height: 100vh;
 `;
 
 export const Content = styled.div`
@@ -27,5 +27,5 @@ export const Content = styled.div`
     margin: 10px 10px 10px 5px;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
     border-radius: 0px 10px 10px 0px;
-
+    height: 97vh;
 `;
