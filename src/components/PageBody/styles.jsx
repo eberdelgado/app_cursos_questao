@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const paletaAzul = {
     AzulPrincipal: '#3498DB',
     AzulClaro: '#87CEEB',
-    AzulEscuro: '#001F3F',
+    AzulEscuro: '#001f3f',
     VerdeÁgua: '#00CED1',
     AmareloPálido: '#FFFF99',
     CinzaClaro: '#D3D3D3',
@@ -15,17 +15,17 @@ export const paletaAzul = {
   }
 
 export const Page = styled.div`
-    display: grid;
-    grid-template-columns: 15% 85%; 
+    //display: grid;
+    //grid-template-columns: 15% 85%; 
     height: 100vh;
 `;
 
 export const Content = styled.div`
-    background-color: ${paletaAzul.AzulClaro};
+    background-color: ${paletaAzul.AzulEscuro};
     //margin-top: 10px;
     //margin-bottom: 10px;
-    margin: 10px 10px 10px 5px;
+    margin: 10px 10px 10px 10px;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
-    border-radius: 0px 10px 10px 0px;
-    height: 97vh;
+    border-radius: 0px 0px 10px 10px;
+    height: 88vh;
 `;

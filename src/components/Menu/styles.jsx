@@ -14,29 +14,29 @@ export const paletaAzul = {
     VerdeMusgo: '#ADFF2F',
   }
 
-  export const Container = styled.div`
-    background-color: ${paletaAzul.AzulPrincipal};
+export const Container = styled.div`
+    background-color: ${paletaAzul.AzulEscuro};
+    font-size: 18px;
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
-    margin: 10px 0px 10px 10px;
-    padding-top: 10%;
-    border-radius: 10px 00px 00px 10px;
-    height: 94vh;
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px 10px 00px 00px;
+    height: 7vh;
 `;
 
 
 export const LabelOption = styled.label`
     //border: solid 1px;
     cursor: pointer;
+    color: #ffffff;
     display: flex;
     justify-content: center;
-    width: ${(props)=> (props.active?"80%":"fit-content")};
-    border-radius: 50px;
-    padding: 5%;
-    margin-bottom: 10%;
-    background-color: ${paletaAzul.VerdeÁgua};
+    width: ${(props)=> (props.active?"fit-content":"fit-content")};
+    border-radius: 10px;
+    padding: 5px;
+    margin: 7px;
+    background-color: ${paletaAzul.AzulPrincipal};
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
 `

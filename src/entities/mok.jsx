@@ -127,3 +127,72 @@ export const q3 ={
  export const sim = {
     questoes:[q1,q2,q3]
 }
+
+
+export const curso1={
+    id:1,
+    nome: "Policia Federal",
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const curso2={
+    id:2,
+    nome: "Policia Federal",
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const curso3={
+    id:3,
+    nome: "Policia Federal",
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const curso4={
+    id:4,
+    nome: "Policia Federal",
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const curso5={
+    id:5,
+    nome: "Policia Federal",    
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const curso6={
+    id:6,
+    nome: "Policia Federal",
+    descricao: "Curso com 1000 questões focado no concurso da policia federal",
+    concurso: "Policia Federel",
+    banca: "Cebraspe",
+    ano: "2024",
+    status: "Matriculado",
+    numero_questoes: 1000
+}
+
+export const mc = [curso1,curso2,curso3,curso4,curso5,curso6]

@@ -1,27 +1,22 @@
 import React from 'react'
 import {
-    Container
+    Container,
 } from './styles'
-import Curso from '../Curso'
+import { useStageContext } from '../../hook/context/useStageContext'
+import ContainerCards from './ContainerCards'
+import MeuCursoDetails from './MeuCursoDetails'
 
 const MeusCrusos = () => {
+  //stages page meusCursos: 1-containerCards, 2-moreDetails 
+  const {meusCursosStage} = useStageContext();  
+
+
   return (
     <Container>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
-        <Curso/>
+      {meusCursosStage==="containerCards" && <ContainerCards/>}
+      {meusCursosStage==="cursoDetails" && <MeuCursoDetails/>}
     </Container>
+    
   )
 }
 

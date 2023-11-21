@@ -8,17 +8,20 @@ import { FaHome } from "react-icons/fa";
 import { MdOutlineClass } from "react-icons/md";
 import { IoStorefrontSharp } from "react-icons/io5";
 import { ImProfile } from "react-icons/im";
+import { useStageContext } from '../../hook/context/useStageContext';
 
 
 
 const Menu = (props) => {
     const [hoover, setHoover] = useState(0);
     const [page] = useState(props.page);
+    const {setMeusCursosStage} = useStageContext();
 
     const navigate = useNavigate();
 
-    const handleClick = (url) => {
-      navigate(url);
+    const handleClick = (index) => {
+        stages[index](stagesName[index]);
+        navigate(url[index]);
     };
   
 
@@ -32,6 +35,8 @@ const Menu = (props) => {
 
     const icons = [<FaHome/>,<MdOutlineClass/>,<IoStorefrontSharp/>,<ImProfile/>];
     const menus = ["- Home","- Meus Cursos","- Loja","- Meu Perfil"];
+    const stages =[()=>1+1, setMeusCursosStage,()=>1+1,()=>1+1]
+    const stagesName =[null,"containerCards"]
     const url = ["/","/meuscursos","/loja","/meuperfil"]
     return (
         <Container>
@@ -39,7 +44,7 @@ const Menu = (props) => {
                 <LabelOption 
                     onMouseEnter={()=>handleMouseEnter(index)}
                     onMouseLeave={handleMouseLeave}
-                    onClick={()=>handleClick(url[index])}
+                    onClick={()=>handleClick(index)}
                     active={(hoover===index) || (page===index)}>
                     
                         {icons[index]}{(hoover===index) || (page===index)?menus[index]:""}

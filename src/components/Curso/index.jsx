@@ -3,25 +3,26 @@ import {
     Container,
     Header,
     Content,
-    LabelInfo, 
+    LabelInfo,
+    ButtonDetails 
 } from './styles'
 
-const Curso = () => (
+const Curso = (props) => {
+    const curso=props.curso;    
+    return (
     <Container>
-
         <Header>
-            <LabelInfo>Codigo: 12548</LabelInfo>
+            <LabelInfo></LabelInfo>
         </Header>
         <Content>
-            <LabelInfo>Curso: Policia Federal</LabelInfo>
-            <LabelInfo>Concurso: Policia Federal</LabelInfo>
-            <LabelInfo>Banca:Cebraspe</LabelInfo>
-            <LabelInfo>Ano: 2024</LabelInfo>
-            <LabelInfo>Status: Matriculado</LabelInfo>
-            <LabelInfo>Numero de questões: 1000</LabelInfo>
+            <LabelInfo>Curso: {curso.nome}</LabelInfo>
+            <LabelInfo>Concurso: {curso.concurso}</LabelInfo>
+            <LabelInfo>Ano: {curso.ano}</LabelInfo>
+            <LabelInfo>Status: {curso.status}</LabelInfo>
+            <ButtonDetails  onClick={props.onClick}>+ Detalhes</ButtonDetails>
         </Content>
 
     </Container>
-)
+)}
 
 export default Curso

@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const paletaAzul = {
     AzulPrincipal: '#3498DB',
     AzulClaro: '#87CEEB',
-    AzulEscuro: '#001F3F',
+    AzulEscuro: '#001f3f9d',
     VerdeAgua: '#00CED1',
     AmareloPalido: '#FFFF99',
-    CinzaClaro: '#D3D3D3',
+    CinzaClaro: '#e9e9e9',
     RosaPalido: '#FFD1DC',
     LaranjaSuave: '#FFA07A',
     MarromClaro: '#D2B48C',
@@ -15,8 +15,9 @@ export const paletaAzul = {
 
 export const Container = styled.div`
     //border: solid 1px;
+    //cursor: pointer;
     margin: 15px;
-    width: fit-content;
+    width: 350px;
     
     height: 200px;
     background-color: white;
@@ -29,7 +30,7 @@ export const Header = styled.div`
     width: 100%;
     
     border-radius: 10px 10px 0px 0px;
-    background-color: ${paletaAzul.AmareloPalido};
+    background-color: ${paletaAzul.AzulClaro};
 `;
 
 export const Content = styled.div`
@@ -41,4 +42,11 @@ export const Content = styled.div`
 `;
 export const LabelInfo = styled.div`
     padding-left: 10px;
-`
+`;
+
+export const ButtonDetails= styled.button`
+    background-color: ${paletaAzul.VerdeMusgo};
+    width: 90%;
+    margin-left: 5%;
+    cursor: pointer;
+`;

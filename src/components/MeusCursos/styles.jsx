@@ -18,12 +18,12 @@ export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    overflow: auto;
+    overflow: hidden;
     align-items: flex-start;
     align-content: flex-start;
-    background-color: ${paletaAzul.CinzaClaro};
-    width: 98%;
-    height: 96%;
+    //background-color: ${paletaAzul.CinzaClaro};
+    width: 97%;
+    height: 100%;
     margin-top: 0.5%;
     margin-left: 1%;
 
