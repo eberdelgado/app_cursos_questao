@@ -16,7 +16,7 @@ const ContainerCards = () => {
         try{
         return meusCursos.map((c,index)=>(
             <Curso 
-                onClick={handleClick}
+                onClick={()=>handleClick(c)}
                 key={index} curso={c}/>
         ))
         }catch{

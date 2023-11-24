@@ -14,15 +14,15 @@ export const paletaAzul = {
     White:'#fff'
   }
 
-  
-
 export const Container = styled.div`
-background-color: ${paletaAzul.White};
-width: 100%;
-height: 95%;
+
+
+overflow: auto;
+background-color: ${paletaAzul.CinzaClaro};
+width: 98%;
+height: 50%;
 margin-top: 0.5%;
 margin-left: 1%;
-border-radius: 10px;
 
 &::-webkit-scrollbar {
 width: 12px; /* Largura da barra de rolagem vertical */
@@ -41,64 +41,50 @@ border-radius: 6px; /* Borda arredondada da trilha */
 &::-webkit-scrollbar-thumb:hover {
 background-color: #555; /* Cor do "polegar" ao passar o mouse sobre ele */
 }
-`;
-
-export const Header=styled.div`
-    width: 100%;
-    height: 4%;
-    border-radius: 10px 10px 0px 0px;
-    background-color: ${paletaAzul.AzulClaro};
-`;
-
-export const Contents = styled.div`
-  display: grid;
-  grid-template-rows: auto 100%; 
-  //border-bottom: solid 2px;
-  width: 100%;
-  //height: 80%;
+`
+export const Header = styled.div`
+background-color: white;
+    border-bottom: solid 1px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    p{
+        margin: 10px ;
+    }
+    button{
+    background-color: ${paletaAzul.VerdeMusgo};
+    padding: 10px;
+    border-radius: 15px;
+    height: fit-content;
+    }
+    
 `
 
-export const InfoContents = styled.div`
-  border-bottom: solid 1px;
-  display: grid;
-  grid-template-columns: 70% 30%;
-`
-
-export const DivInfo = styled.div`  
-  margin: 10px 0px 10px 10px;
+export const Notebook = styled.div`
+  display: flex;
+  border: solid 1px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
   p{
-    //background-color: red;
-    margin-bottom: 2px;
-    margin-top: 0px;
+        margin: 10px ;
+    }
+   button{
+    height: fit-content;
   }
 `
-export const DivButtonInfo = styled.div`
+
+export const DivButton = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  padding: 5px;
   button{
-    background-color: ${paletaAzul.VerdeMusgo};
+    background-color: ${paletaAzul.AmareloPálido};
     padding: 10px;
     border-radius: 15px;
     height: fit-content;
   }
 
-`
-
-export const ContainerNotebooks = styled.div`
-
-`
-
-export const NoteBook = styled.div`
-  border: solid 1px;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
-   button{
-    //background-color: ${paletaAzul.VerdeMusgo};
-    //padding: 10px;
-    //border-radius: 15px;
-    height: fit-content;
-  }
 `

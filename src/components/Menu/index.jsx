@@ -13,18 +13,16 @@ import { useStageContext } from '../../hook/context/useStageContext';
 
 
 const Menu = (props) => {
-    const [hoover, setHoover] = useState(0);
+    const [hoover, setHoover] = useState(-1);
     const [page] = useState(props.page);
     const {setMeusCursosStage} = useStageContext();
 
     const navigate = useNavigate();
-
     const handleClick = (index) => {
         stages[index](stagesName[index]);
         navigate(url[index]);
     };
   
-
     const handleMouseEnter= (id) =>{
         setHoover(id);
     }
