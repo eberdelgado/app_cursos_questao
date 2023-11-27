@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//import { paletaSuave } from "../../entities/paleta";
+import { paleta1 } from "../../entities/paleta";
 
 export const paletaAzul = {
     AzulPrincipal: '#3498DB',
@@ -21,7 +21,7 @@ export const Page = styled.div`
 `;
 
 export const Content = styled.div`
-    background-color: ${paletaAzul.AzulEscuro};
+    background-color: ${paleta1.AzulEscuro};
     //margin-top: 10px;
     //margin-bottom: 10px;
     margin: 10px 10px 10px 10px;

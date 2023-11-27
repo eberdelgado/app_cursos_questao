@@ -8,7 +8,7 @@ export const paletaSuave = {
     corErrado :'#ff7f7f',      // Vermelho
   };
 
-export const paletaAzul = {
+export  const paleta1 = {
   AzulPrincipal: '#3498DB',
   AzulClaro: '#87CEEB',
   AzulEscuro: '#001F3F',
@@ -19,4 +19,5 @@ export const paletaAzul = {
   LaranjaSuave: '#FFA07A',
   MarromClaro: '#D2B48C',
   VerdeMusgo: '#ADFF2F',
+  White:'#fff'
 }

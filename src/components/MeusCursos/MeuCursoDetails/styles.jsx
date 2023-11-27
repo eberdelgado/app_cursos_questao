@@ -1,23 +1,9 @@
 import styled from "styled-components";
-
-export const paletaAzul = {
-    AzulPrincipal: '#3498DB',
-    AzulClaro: '#87CEEB',
-    AzulEscuro: '#001F3F',
-    VerdeÁgua: '#00CED1',
-    AmareloPálido: '#FFFF99',
-    CinzaClaro: '#D3D3D3',
-    RosaPálido: '#FFD1DC',
-    LaranjaSuave: '#FFA07A',
-    MarromClaro: '#D2B48C',
-    VerdeMusgo: '#ADFF2F',
-    White:'#fff'
-  }
-
-  
+import { paleta1 } from "../../../entities/paleta";
+ 
 
 export const Container = styled.div`
-background-color: ${paletaAzul.White};
+background-color: ${paleta1.White};
 width: 100%;
 height: 95%;
 margin-top: 0.5%;
@@ -34,7 +20,7 @@ border-radius: 6px; /* Borda arredondada do "polegar" */
 }
 
 &::-webkit-scrollbar-track {
-background-color: ${paletaAzul.CinzaClaro}; /* Cor da trilha da barra de rolagem */
+background-color: ${paleta1.CinzaClaro}; /* Cor da trilha da barra de rolagem */
 border-radius: 6px; /* Borda arredondada da trilha */
 }
 
@@ -47,7 +33,7 @@ export const Header=styled.div`
     width: 100%;
     height: 4%;
     border-radius: 10px 10px 0px 0px;
-    background-color: ${paletaAzul.AzulClaro};
+    background-color: ${paleta1.AzulClaro};
 `;
 
 export const Contents = styled.div`
@@ -67,7 +53,6 @@ export const InfoContents = styled.div`
 export const DivInfo = styled.div`  
   margin: 10px 0px 10px 10px;
   p{
-    //background-color: red;
     margin-bottom: 2px;
     margin-top: 0px;
   }
@@ -78,7 +63,7 @@ export const DivButtonInfo = styled.div`
   align-items: center;
   justify-content: center;
   button{
-    background-color: ${paletaAzul.VerdeMusgo};
+    background-color: ${paleta1.VerdeMusgo};
     padding: 10px;
     border-radius: 15px;
     height: fit-content;
@@ -96,9 +81,6 @@ export const NoteBook = styled.div`
   margin: 10px;
   padding: 5px;
    button{
-    //background-color: ${paletaAzul.VerdeMusgo};
-    //padding: 10px;
-    //border-radius: 15px;
     height: fit-content;
   }
 `

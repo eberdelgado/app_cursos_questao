@@ -14,6 +14,8 @@ import {
   Button
 } from './styles'
 import { useSimuladoContext } from '../../hook/context/useSimuladoContext'
+import { useNavigate } from 'react-router-dom'
+import { useStageContext } from '../../hook/context/useStageContext'
 
 const Simulado = () => {
   const {simulado} = useSimuladoContext();
@@ -22,7 +24,10 @@ const Simulado = () => {
   const [totalQuestao, setTotalQuestao] = useState(0);
   const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
   const [stageComentario,setStageComentario] = useState([]);
-  
+  const navigate=useNavigate();
+  const {setMeusCursosStage} =useStageContext();
+
+
   const handleSelectAlternativa =(index)=>{
     let aux=[...alternativaSelecionada];
     aux[numeroQuestao]=index;
@@ -40,11 +45,12 @@ const Simulado = () => {
   },[numeroQuestao])
   
   const handleResponder =()=>{
-    let aux=[...stageComentario];
-    aux[numeroQuestao]= questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ;
-   
-    setStageComentario(aux);
-    console.log(aux);
+    if(alternativaSelecionada[numeroQuestao]){
+      let aux=[...stageComentario];
+      aux[numeroQuestao]= questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ;
+      setStageComentario(aux);
+    }
+    //todo tem que selecionar uma alternativa
   }
 
   const handleVoltar=()=>{
@@ -57,6 +63,8 @@ const Simulado = () => {
     setNumeroQuestao(numeroQuestao+1);
    }else{
     //todo modal terminar
+    setMeusCursosStage("simuladoResults")
+    navigate("/meuscursos")
    }
 
   }

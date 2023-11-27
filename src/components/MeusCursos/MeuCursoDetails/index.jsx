@@ -6,7 +6,7 @@ import {
   InfoContents,
   DivInfo,
   DivButtonInfo,
-} from './style'
+} from './styles'
 import { useCursosContext } from '../../../hook/context/useCursosContext'
 import ContainerNotebooks from './ContainerNotebooks'
 import { useNavigate } from 'react-router-dom'

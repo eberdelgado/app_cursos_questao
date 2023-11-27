@@ -1,12 +1,15 @@
 import React from 'react'
 import Simulado from '../../components/Simulado'
 import {SimuladoContextProvider} from '../../context/SimuladoContext'
+import { CursosContextProvider } from '../../context/CursosContext'
 
 
 const SimuladoPage = () => {
   return (
     <SimuladoContextProvider>
-      <Simulado/>
+      <CursosContextProvider>
+        <Simulado/>
+      </CursosContextProvider>     
     </SimuladoContextProvider>
   )
 }

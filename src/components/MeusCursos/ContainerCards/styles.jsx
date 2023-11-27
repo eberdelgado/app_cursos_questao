@@ -1,20 +1,6 @@
 import styled from "styled-components";
-//import { paletaSuave } from "../../entities/paleta";
-
-export const paletaAzul = {
-    AzulPrincipal: '#3498DB',
-    AzulClaro: '#87CEEB',
-    AzulEscuro: '#001F3F',
-    VerdeÁgua: '#00CED1',
-    AmareloPálido: '#FFFF99',
-    CinzaClaro: '#D3D3D3',
-    RosaPálido: '#FFD1DC',
-    LaranjaSuave: '#FFA07A',
-    MarromClaro: '#D2B48C',
-    VerdeMusgo: '#ADFF2F',
-  }
-
-  
+import {paleta1} from "../../../entities/paleta"
+ 
 
 export const Container = styled.div`
 display: flex;
@@ -23,7 +9,7 @@ justify-content: flex-start;
 overflow: auto;
 align-items: flex-start;
 align-content: flex-start;
-background-color: ${paletaAzul.CinzaClaro};
+background-color: ${paleta1.CinzaClaro};
 width: 100%;
 height: 100%;
 margin-top: 0.5%;
@@ -39,7 +25,7 @@ border-radius: 6px; /* Borda arredondada do "polegar" */
 }
 
 &::-webkit-scrollbar-track {
-background-color: ${paletaAzul.CinzaClaro}; /* Cor da trilha da barra de rolagem */
+background-color: ${paleta1.CinzaClaro}; /* Cor da trilha da barra de rolagem */
 border-radius: 6px; /* Borda arredondada da trilha */
 }
 
@@ -47,3 +33,18 @@ border-radius: 6px; /* Borda arredondada da trilha */
 background-color: #555; /* Cor do "polegar" ao passar o mouse sobre ele */
 }
 `;
+
+
+
+/*Paleta1
+  AzulPrincipal: '#3498DB',
+  AzulClaro: '#87CEEB',
+  AzulEscuro: '#001F3F',
+  VerdeÁgua: '#00CED1',
+  AmareloPálido: '#FFFF99',
+  CinzaClaro: '#D3D3D3',
+  RosaPálido: '#FFD1DC',
+  LaranjaSuave: '#FFA07A',
+  MarromClaro: '#D2B48C',
+  VerdeMusgo: '#ADFF2F',
+*/
