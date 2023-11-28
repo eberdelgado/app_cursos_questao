@@ -18,11 +18,11 @@ import { useNavigate } from 'react-router-dom'
 import { useStageContext } from '../../hook/context/useStageContext'
 
 const Simulado = () => {
-  const {simulado} = useSimuladoContext();
+  const {simulado,alternativaSelecionada,setAlternativaSelecionada} = useSimuladoContext();
   const [questaoAtual,setQuestaoAtual] =useState(q);
   const [numeroQuestao,setNumeroQuestao] = useState(0);
   const [totalQuestao, setTotalQuestao] = useState(0);
-  const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
+  //const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
   const [stageComentario,setStageComentario] = useState([]);
   const navigate=useNavigate();
   const {setMeusCursosStage} =useStageContext();
@@ -36,6 +36,7 @@ const Simulado = () => {
 
   useEffect(()=>{
     try{
+      setAlternativaSelecionada([-1])
       setQuestaoAtual(simulado.questoes[numeroQuestao]);
       setTotalQuestao(simulado.questoes.length);
       
@@ -45,7 +46,7 @@ const Simulado = () => {
   },[numeroQuestao])
   
   const handleResponder =()=>{
-    if(alternativaSelecionada[numeroQuestao]){
+    if(alternativaSelecionada[numeroQuestao]>=0){
       let aux=[...stageComentario];
       aux[numeroQuestao]= questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ;
       setStageComentario(aux);

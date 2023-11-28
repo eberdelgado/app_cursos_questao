@@ -5,11 +5,11 @@ import { CursosContextProvider } from '../../../context/CursosContext'
 
 const MeusCursosPage = () => {
   return (
-    <CursosContextProvider>
-      <PageBody page={1}>
-          <MeusCrusos/>
-      </PageBody>
-    </CursosContextProvider>
+      <CursosContextProvider>
+        <PageBody page={1}>
+            <MeusCrusos/>
+        </PageBody>
+      </CursosContextProvider>
   )
 }
 

@@ -3,8 +3,12 @@ import {paleta1} from "../../../entities/paleta"
 
 export const Container = styled.div`
     background-color: ${paleta1.White};
-    height: 100%;
+    height: 95%;
     width: 100%;
+    margin-top: 0.5%;
+    margin-left: 1%;
+    border-radius: 10px;
+    overflow: auto;
 `;
 
 
