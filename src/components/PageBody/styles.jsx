@@ -28,4 +28,6 @@ export const Content = styled.div`
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
     border-radius: 0px 0px 10px 10px;
     height: 88vh;
+    display: flex;
+    justify-content: center;
 `;

@@ -7,7 +7,7 @@ import ContainerCards from './ContainerCards'
 import MeuCursoDetails from './MeuCursoDetails'
 import SimuladoResults from './SimuladoResults'
 
-const MeusCrusos = () => {
+const MeusCursos = () => {
   //stages page meusCursos: 1-containerCards, 2-moreDetails , 3-simuladoResults
   const {meusCursosStage} = useStageContext();  
 
@@ -22,4 +22,4 @@ const MeusCrusos = () => {
   )
 }
 
-export default MeusCrusos
+export default MeusCursos

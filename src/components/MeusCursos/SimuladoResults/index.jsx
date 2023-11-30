@@ -1,15 +1,21 @@
 import React from 'react'
 import {
     Container,
+    Header,
+    ContainerButton
 } from './styles'
 import { useSimuladoContext } from '../../../hook/context/useSimuladoContext'
 import Question from './Question'
+import { useStageContext } from '../../../hook/context/useStageContext'
 
 const SimuladoResults = () => {
+  const {setMeusCursosStage} = useStageContext(); 
   const {simulado,alternativaSelecionada} = useSimuladoContext()
+  const handleClick = ()=>{
+    setMeusCursosStage("cursoDetails");
 
+  }
 
-  console.log(alternativaSelecionada)
   const renderQuestions = ()=>{
     try{
       return(
@@ -24,13 +30,18 @@ const SimuladoResults = () => {
   }
   return (
     <Container>
-      resultado simulado:
-      Acertos: 15 de 30 questões;
-      Porcentagem: 50%;
-      ir para os detalhes do curso
-      if caderno botão de salvar
+      <Header>
+        <h1>Resultado simulado:</h1>
+        <h2>Acertos: 15 de 30 questões - 50%</h2>
+        <ContainerButton>
+            <button onClick={handleClick}>Voltar para o curso</button>
+            <button>Salvar resultado</button>
+        </ContainerButton>
+        
 
-      questoes:
+        <h2>Questoes:</h2>
+      </Header>
+      
       {renderQuestions()}
     </Container>
   )

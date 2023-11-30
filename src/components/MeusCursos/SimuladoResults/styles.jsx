@@ -11,6 +11,17 @@ export const Container = styled.div`
     overflow: auto;
 `;
 
+export const Header = styled.div`
+    border-bottom: solid 2px ;
+    margin-left: 15px;
+    text-align: center;
+`
+export const ContainerButton = styled.div`
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+    padding: 5px;
+    //background-color: aliceblue;
+`
 
 /*
     AzulPrincipal: '#3498DB',
