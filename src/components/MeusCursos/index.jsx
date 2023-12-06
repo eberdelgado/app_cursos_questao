@@ -1,7 +1,4 @@
 import React from 'react'
-import {
-    Container,
-} from './styles'
 import { useStageContext } from '../../hook/context/useStageContext'
 import ContainerCards from './ContainerCards'
 import MeuCursoDetails from './MeuCursoDetails'
@@ -13,11 +10,11 @@ const MeusCursos = () => {
 
 
   return (
-    <Container>
+    <>
       {meusCursosStage==="containerCards" && <ContainerCards/>}
       {meusCursosStage==="cursoDetails" && <MeuCursoDetails/>}
       {meusCursosStage==="simuladoResults" && <SimuladoResults/>}
-    </Container>
+    </>
     
   )
 }

@@ -1,8 +1,11 @@
 import React from 'react'
-import {Container} from './styles'
+import {
+    Container,
+} from './styles'
 import Curso from '../../Curso'
 import { useCursosContext } from '../../../hook/context/useCursosContext'
 import { useStageContext } from '../../../hook/context/useStageContext'
+import ContainerCardsCursos from '../../ContainerCardsCursos'
 
 const ContainerCards = () => {
     const {meusCursos,setCursoDetails} = useCursosContext();
@@ -24,10 +27,12 @@ const ContainerCards = () => {
         }
     }
     return (
-        <Container>
+        <ContainerCardsCursos title={"Meus Cursos("+(meusCursos?meusCursos.length:0)+")"}>
             {renderCursos()}
-        </Container>
+        </ContainerCardsCursos>
+        
     )
 }
 
 export default ContainerCards
+
