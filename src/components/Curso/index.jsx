@@ -14,9 +14,7 @@ const Curso = (props) => {
         try{
             return (
             <Container>
-                <Header>
-                    <LabelInfo></LabelInfo>
-                </Header>
+                <Header/>
                 <Content>
                     <LabelInfo>Curso: {curso.nome}</LabelInfo>
                     <LabelInfo>Concurso: {curso.concurso}</LabelInfo>

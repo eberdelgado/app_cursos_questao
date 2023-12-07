@@ -1,26 +1,17 @@
 import React from 'react'
-import Curso from '../Curso'
-import { useCursosContext } from '../../hook/context/useCursosContext'
-import ContainerCardsCursos from '../ContainerCardsCursos'
+import ContainerCards from './ContainerCards'
+import { useStageContext } from '../../hook/context/useStageContext'
+import StoreCursoDetails from './StoreCursoDetails';
 
 
 const Store = () => {
-  const {allCursos} = useCursosContext();
-  const renderCursos = ()=>{
-    try{
-      return allCursos.map((c)=>
-        <Curso curso={c}/>
-      )
-      
-    }catch{
-      return "Nenhum Curso encontrado"
-    }
-  }
- 
+  const {storeStage,modalCursoDetail} = useStageContext();
   return (
-    <ContainerCardsCursos title={"Catalogo de cursos:"}>
-      {renderCursos()}
-    </ContainerCardsCursos>
+    <>
+      {storeStage==="containerCards" && <ContainerCards/>}
+      {modalCursoDetail &&  <StoreCursoDetails/>}
+    </>
+    
   )
 }
 
