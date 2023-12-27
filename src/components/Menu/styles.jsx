@@ -4,7 +4,9 @@ import { paleta1 } from "../../entities/paleta";
 export const Container = styled.div`
     background-color: ${paleta1.AzulEscuro};
     font-size: 18px;
-    display: flex;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
@@ -20,14 +22,38 @@ export const LabelOption = styled.label`
     color: #ffffff;
     display: flex;
     justify-content: center;
-    width: ${(props)=> (props.active?"fit-content":"fit-content")};
+    align-items: center;
+    width: fit-content;
     border-radius: 10px;
     padding: 5px;
     margin: 7px;
-    background-color: ${paleta1.AzulPrincipal};
-    box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
+    background-color: ${(props)=> props.active? paleta1.AzulPrincipal:"none"};
+    box-shadow: ${(props)=> props.active? "0px 6px 3px rgb(0 0 0 / 50%)":"0px"};
+    border-right: solid 1px ${paleta1.AzulPrincipal};
+    p{
+      margin: 0;
+    }
 `
 
+ export const DivLogin = styled.div`
+  margin-right: 20px;
+  display: flex;
+  justify-content: right;
+  label{
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 7px;
+    border-right: solid 1px ${paleta1.AzulPrincipal};
+    color: white;
+  }
+`
+
+export const DivMenu = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
 /*Paleta1
   AzulPrincipal: '#3498DB',
     AzulClaro: '#87CEEB',
