@@ -13,7 +13,7 @@ import { ImProfile } from "react-icons/im";
 import { CiLogin,CiLogout } from "react-icons/ci";
 import { useStageContext } from '../../hook/context/useStageContext';
 import { useUserContext } from '../../hook/context/useUserContext';
-
+import  MobileMenu from './MobileMenu/index'
 
 
 const Menu = (props) => {
@@ -41,6 +41,7 @@ const Menu = (props) => {
     const url = ["/","/meuscursos","/loja","/meuperfil"]
     return (
         <Container>
+            <MobileMenu/>
             <DivMenu>
             <LabelOption 
                 onClick={()=>handleClick(0)}
@@ -77,3 +78,4 @@ const Menu = (props) => {
 }
 
 export default Menu
+

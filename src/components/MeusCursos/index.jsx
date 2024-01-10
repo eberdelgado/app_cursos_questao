@@ -4,17 +4,21 @@ import ContainerCards from './ContainerCards'
 import MeuCursoDetails from './MeuCursoDetails'
 import SimuladoResults from './SimuladoResults'
 import { useFetchMeusCursos } from '../../hook/fetch/useFetchMeusCursos'
+import { useCursosContext } from '../../hook/context/useCursosContext'
 
 const MeusCursos = () => {
   //stages page meusCursos: 1-containerCards, 2-moreDetails , 3-simuladoResults
   const {meusCursosStage} = useStageContext();  
-  const {meusCursos,getMeusCursos} =useFetchMeusCursos()
-  
+  const {meusCursosLoad,getMeusCursos} =useFetchMeusCursos()
+  const {setMeusCursos} = useCursosContext()
+
   useEffect(()=>{
     getMeusCursos()
   },[])
 
-  console.log(meusCursos)
+  useEffect(()=>{
+    setMeusCursos(meusCursosLoad)
+  },[meusCursosLoad])
   
   return (
     <>

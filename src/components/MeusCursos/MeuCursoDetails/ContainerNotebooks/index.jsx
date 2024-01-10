@@ -6,28 +6,34 @@ import {
     Contents
 } from './styles'
 import Notebook from './Notebook'
+import { useCursosContext } from '../../../../hook/context/useCursosContext'
 
 
 
 const ContainerNotebooks = () => {
+  const {cursoDetails} =useCursosContext()
 
+  
+  const renderNotebooks=()=>{
+    console.log(cursoDetails.cursos)
+    try{
+      return (
+        cursoDetails.cursos.caderno.map((c)=>( <Notebook caderno={c}/>))
+      )
+    }catch(error){
+      return (<p>Nenhum cardeno encontrado</p>)
+    }
+  }
   return (
     <Container>
           <Header>
             <p>Meus cadernos(2):</p>  
-            <DivButton>
+            {/*<DivButton>
                 <button>Criar caderno</button>
-            </DivButton>
+            </DivButton>*/}
           </Header>
-
           <Contents>
-            <Notebook/>
-            <Notebook/>
-            <Notebook/>
-            <Notebook/>
-            <Notebook/>
-            <Notebook/>
-            <Notebook/>
+            {renderNotebooks()}            
           </Contents>         
     </Container>
   )

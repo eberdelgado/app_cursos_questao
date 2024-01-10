@@ -19,7 +19,7 @@ const Curso = (props) => {
                     <LabelInfo>Curso: {curso.nome}</LabelInfo>
                     <LabelInfo>Concurso: {curso.concurso}</LabelInfo>
                     <LabelInfo>Ano: {curso.ano}</LabelInfo>
-                    <LabelInfo>Status: {curso.status}</LabelInfo>
+                    {props.status && <LabelInfo>Status: {props.status}</LabelInfo>}
                     <ButtonDetails  onClick={props.onClick}>+ Detalhes</ButtonDetails>
                 </Content>
 

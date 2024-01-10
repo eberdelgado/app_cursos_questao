@@ -6,7 +6,7 @@ export const Container = styled.div`
     font-size: 18px;
     
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 70% 30%;
     justify-content: flex-start;
     align-items: center;
     box-shadow: 6px 6px 3px rgb(0 0 0 / 50%);
@@ -53,6 +53,10 @@ export const DivMenu = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 /*Paleta1
   AzulPrincipal: '#3498DB',
