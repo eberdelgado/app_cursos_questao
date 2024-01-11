@@ -5,7 +5,7 @@ import { paleta1 } from "../../../entities/paleta";
 export const Container = styled.div`
 background-color: ${paleta1.White};
 width: 100%;
-height: 95%;
+//height: 95%;
 margin-top: 0.5%;
 margin-left: 1%;
 border-radius: 10px;
@@ -24,7 +24,8 @@ export const Contents = styled.div`
   grid-template-rows: auto 100%; 
   //border-bottom: solid 2px;
   width: 100%;
-  //height: 80%;
+  height: 80%;
+  //overflow: hidden;
 `
 
 export const InfoContents = styled.div`

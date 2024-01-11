@@ -15,7 +15,6 @@ const ContainerNotebooks = () => {
 
   
   const renderNotebooks=()=>{
-    console.log(cursoDetails.cursos)
     try{
       return (
         cursoDetails.cursos.caderno.map((c)=>( <Notebook caderno={c}/>))
@@ -33,7 +32,7 @@ const ContainerNotebooks = () => {
             </DivButton>*/}
           </Header>
           <Contents>
-            {renderNotebooks()}            
+            {renderNotebooks()}                    
           </Contents>         
     </Container>
   )
