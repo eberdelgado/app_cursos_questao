@@ -3,20 +3,19 @@ import { useState } from "react";
 import {url} from './rotas'
 
 export const useFetchCursos = () => {
-    const [Cursos, setCursos] = useState([]);
-    
-    
-    const getCursos=()=>{
-        axios.get(url+"cursos/")
-            .then(response=>{
-                console.log(response.data)
-            }).catch(error =>{
-                console.error(error)
-            })
+       
+    const getCursos=async()=>{
+        try{
+            const response = await axios.get( url+`cursos/?format=json`)
+            return response.data
+        }catch(error){
+            console.error(error);
+            return null;
+        }
     }
 
     return {
-        Cursos,setCursos,getCursos
+        getCursos
     };
 };
 

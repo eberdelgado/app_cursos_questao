@@ -28,7 +28,7 @@ export const useFetchMeusCursos = () => {
             return response.data
         }catch(error){
             console.error(error);
-            return false
+            return null;
         }
     }
 

@@ -87,7 +87,7 @@ const Simulado = () => {
       let aux=[...stageComentario];
      
       aux[numeroQuestao]= questaoAtual.isTrueOrFalse ? 
-                          (!questaoAtual.resposta && alternativaSelecionada[numeroQuestao] ? 1:2)
+                          (questaoAtual.resposta && alternativaSelecionada[numeroQuestao] ? 1:2)
                           : (questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ); 
       
       setStageComentario(aux);
@@ -114,6 +114,8 @@ const Simulado = () => {
 
   }
 
+  console.log(stageComentario)
+
   const render = ()=>{
     try{
       return (
@@ -135,19 +137,19 @@ const Simulado = () => {
         <>
           <Alternativa
             correct={ questaoAtual.resposta && stageComentario[numeroQuestao] ? 1 :
-              stageComentario[numeroQuestao]===2 && 0===alternativaSelecionada[numeroQuestao] ? 2 
+              stageComentario[numeroQuestao]===2 && 1===alternativaSelecionada[numeroQuestao] ? 2 
               : 3 }
-            select={0===alternativaSelecionada[numeroQuestao]} 
-            onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(0)}
+            select={1===alternativaSelecionada[numeroQuestao]} 
+            onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(1)}
           >
             Verdadeiro
           </Alternativa>
           <Alternativa
           correct={ !questaoAtual.resposta && stageComentario[numeroQuestao] ? 1 :
-            stageComentario[numeroQuestao]===2 && 1===alternativaSelecionada[numeroQuestao] ? 2 
+            stageComentario[numeroQuestao]===2 && 0===alternativaSelecionada[numeroQuestao] ? 2 
             : 3 }
-            select={1===alternativaSelecionada[numeroQuestao]} 
-            onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(1)}
+            select={0===alternativaSelecionada[numeroQuestao]} 
+            onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(0)}
             >
             Falso
           </Alternativa>

@@ -46,7 +46,7 @@ const Menu = (props) => {
             <LabelOption 
                 onClick={()=>handleClick(0)}
                 active={(page===0)}>
-                <FaHome/> <p> - Menu</p>
+                <FaHome/> <p> - Home</p>
             </LabelOption>
             {isLog && <LabelOption
                 onClick={()=>handleClick(1)}

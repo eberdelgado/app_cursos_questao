@@ -4,9 +4,11 @@ import { paleta1 } from "../../../entities/paleta";
 export const Container = styled.div`
     position: fixed;
     transform: translate(0vh,5vw);
-    background-color: red;
+    background-color: #fdfdfd;
     width: auto;
     height: fit-content;
+    border-radius: 10px 10px 10px 10px;
+    
 `
 
 export const Header = styled.div`
@@ -17,5 +19,7 @@ export const Header = styled.div`
     background-color: ${paleta1.AzulClaro};
 `;
 export const Contents = styled.div`
+    padding-left: 10px;
+    padding-right: 10px;
     display: grid;
 `

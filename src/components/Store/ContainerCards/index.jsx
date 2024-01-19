@@ -4,12 +4,18 @@ import { useCursosContext } from '../../../hook/context/useCursosContext'
 import ContainerCardsCursos from '../../ContainerCardsCursos'
 
 
-const ContainerCards = () => {
-  const {allCursos} = useCursosContext();
+const ContainerCards = (props) => {
+  const {cursos,setCursoDetails,allCursos} = useCursosContext();
+  
+  const handleClick=(c)=>{
+    props.onClick();
+    setCursoDetails(c);
+  }
+
   const renderCursos = ()=>{
     try{
-      return allCursos.map((c)=>
-        <Curso curso={c}/>
+      return cursos.map((c)=>
+        <Curso onClick={()=>handleClick(c)} curso={c}/>
       )
       
     }catch{

@@ -6,17 +6,18 @@ export const SimuladoContext = createContext();
 export const SimuladoContextProvider = ({ children }) => {
     const [simulado, setSimulado] = useState(sim);
     const [questoes, setQuestoes] = useState();
-    const [alternativaSelecionada,setAlternativaSelecionada] = useState([-1]);
     const [historico,setHistorico] = useState([]);
     const [caderno,setCaderno] = useState();
+    const [statusQuestion,setStatusQuestion] = useState([]); // 1 resposta correta -- 2 resposta errada -- 3 sem resposta
+
   return (
     <SimuladoContext.Provider
       value={{
         simulado,setSimulado,
-        alternativaSelecionada,setAlternativaSelecionada,
         questoes, setQuestoes,
         historico,setHistorico,
-        caderno,setCaderno
+        caderno,setCaderno,
+        statusQuestion,setStatusQuestion
               }}
     >
       {children}
