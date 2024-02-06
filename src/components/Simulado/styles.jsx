@@ -93,3 +93,9 @@ export const Button = styled.button`
     margin-left: 0.9rem;
     cursor: pointer;
 `;
+
+export const ContainerComentario = styled.div`
+    margin: 15px;
+    border-top: solid 1.5px;
+    padding: 0.7rem;
+`

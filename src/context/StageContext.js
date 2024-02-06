@@ -8,7 +8,7 @@ export const StageContextProvider = ({ children }) => {
     
     //stages page meusCursos: 1-containerCards, 2-cursoDetails 
     const [storeStage, setStoreStage] = useState("containerCards")
-    const [modalCursoDetail, setModalCursoDetail] = useState(true)
+    const [modalCursoDetail, setModalCursoDetail] = useState(false)
 
     return (
         <StageContext.Provider

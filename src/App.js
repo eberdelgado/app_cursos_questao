@@ -3,32 +3,36 @@ import SimuladoPage from "./pages/Simulado"
 import HomePage from "./pages/Home"
 import MeusCursosPage from "./pages/User/MeusCursos";
 import MyProfile from "./pages/User/MyProfile";
+import StorePage from "./pages/User/Store";
+import LoginPage from "./pages/Login";
 import { StageContextProvider } from "./context/StageContext";
 import { SimuladoContextProvider } from "./context/SimuladoContext";
 import { CursosContextProvider } from "./context/CursosContext";
-import { UserContext, UserContextProvider } from "./context/UserContext";
-import StorePage from "./pages/User/Store";
+import { useUserContext } from "./hook/context/useUserContext";
+
 
 
 function App() {
+  const {isLog} = useUserContext()
   return (
-    <UserContextProvider>
+
       <StageContextProvider>
         <SimuladoContextProvider>
           <CursosContextProvider>
             <Router>
               <Routes>
-                <Route path="/" element={<HomePage />} /> 
-                <Route path="/simulado" element={<SimuladoPage />} /> 
-                <Route path="/meuscursos" element={<MeusCursosPage />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage/>}/> 
+                <Route path="/simulado" element={isLog?<SimuladoPage />:<HomePage />} /> 
+                <Route path="/meuscursos" element={isLog?<MeusCursosPage />:<HomePage />} />
                 <Route path="/loja" element={<StorePage />} /> 
-                <Route path="/meuperfil" element={<MyProfile />} />  
+                <Route path="/meuperfil" element={isLog?<MyProfile />:<HomePage />} />  
               </Routes>
             </Router>
           </CursosContextProvider>
         </SimuladoContextProvider>
       </StageContextProvider>
-    </UserContextProvider>
+
   );
 }
 

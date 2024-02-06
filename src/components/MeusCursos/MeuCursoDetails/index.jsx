@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Container,
   Header,
@@ -13,8 +13,8 @@ import { useNavigate } from 'react-router-dom'
 
 const MeuCursoDetails = () => {
   const navigate=useNavigate();
-  const {cursoDetails}=useCursosContext()
-  
+  const {cursoDetails}=useCursosContext();
+ 
   const handleClick=()=>{
     navigate("/simulado")
   }
@@ -24,14 +24,13 @@ const MeuCursoDetails = () => {
       <Contents>
         <InfoContents>
           <DivInfo>
-            <p>Curso:{cursoDetails.nome} | Concurso:{cursoDetails.concurso} | Banca:{cursoDetails.banca} | Ano:{cursoDetails.ano}</p>
-            <p>Descrição:{cursoDetails.descricao}</p>
-            <p>Numero de questões:{cursoDetails.numero_questoes}</p>
-            <p>status:{cursoDetails.status}</p>
+            <p>Curso:{cursoDetails.cursos.nome} | Concurso:{cursoDetails.cursos.concurso} | Banca:{cursoDetails.cursos.banca} | Ano:{cursoDetails.cursos.ano}</p>
+            <p>Descrição:{cursoDetails.cursos.descricao}</p>
+            <p>Status:{cursoDetails.status}</p>
           </DivInfo>
-          <DivButtonInfo>
+          {/*<DivButtonInfo>
             <button onClick={handleClick}>iniciar questões</button>
-          </DivButtonInfo>
+        </DivButtonInfo>*/}
         </InfoContents>
         <ContainerNotebooks/>
       </Contents>

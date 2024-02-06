@@ -64,3 +64,10 @@ export const Alternativa = styled.div`
                                     props.correct===2?paletaSuave.corErrado:  
                                     paletaSuave.corSecundaria};
 `;
+
+export const ContainerComentario = styled.div`
+    margin: 15px;
+    border-top: solid 1.5px;
+    padding: 0.7rem;
+    padding-bottom: 0%;
+`

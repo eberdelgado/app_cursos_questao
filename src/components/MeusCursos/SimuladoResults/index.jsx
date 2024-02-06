@@ -10,7 +10,7 @@ import { useStageContext } from '../../../hook/context/useStageContext'
 
 const SimuladoResults = () => {
   const {setMeusCursosStage} = useStageContext(); 
-  const {simulado,alternativaSelecionada} = useSimuladoContext()
+  const {questoes, historico,simulado,alternativaSelecionada,statusQuestion} = useSimuladoContext()
   const handleClick = ()=>{
     setMeusCursosStage("cursoDetails");
 
@@ -19,7 +19,7 @@ const SimuladoResults = () => {
   const renderQuestions = ()=>{
     try{
       return(
-        simulado.questoes.map((q,index)=>(
+        questoes.map((q,index)=>(
           <Question index={index}/>
         ))
       )
