@@ -12,9 +12,9 @@ import { paletaSuave } from "../../entities/paleta";
 
 export const Container = styled.div`
     font-size: 20px;
-    font-family: serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: ${paletaSuave.corFundo};
-    display: block;
+    //display: block;
     //height: 100vh; 
 `;
 
@@ -46,14 +46,23 @@ export const Informacoes = styled.div`
 export const InfoLabel = styled.label`
     padding-left: 0.5rem;
 `;
-export const HeaderLabel = styled.label`
-    padding-left: 0.5rem;
+export const HeaderLabel = styled.div`
+    display: flex;
+    justify-content: center;
+    div{
+        margin-left: 10px;
+        cursor: pointer;
+        
+    }
 `;
 export const Enunciado = styled.div`
+    font-size: 22px;
     margin: 15px;
     margin-top: 0px;
     padding: 0.7rem;
     border-bottom: solid 1.5px;
+    font-weight: bold;
+    text-align: justify;
 `;
 
 export const BoxAlternativas = styled.div`
@@ -98,4 +107,14 @@ export const ContainerComentario = styled.div`
     margin: 15px;
     border-top: solid 1.5px;
     padding: 0.7rem;
+`
+
+export const InputNumeroQuestao = styled.input`
+    width: 50px;
+    font-size: 18px;
+    font-family: serif;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
 `

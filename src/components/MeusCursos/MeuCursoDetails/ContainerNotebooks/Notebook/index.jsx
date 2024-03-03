@@ -3,15 +3,31 @@ import { Container } from './styles'
 import { useNavigate } from 'react-router-dom'
 import { useFetchCadernos } from '../../../../../hook/fetch/useFetchCadernos'
 import {useSimuladoContext} from '../../../../../hook/context/useSimuladoContext'
+import { useFetchHistorico } from '../../../../../hook/fetch/useFetchHistorico'
 
 const Notebook = (props) => {
   const {getCaderno,loading}=useFetchCadernos()
-  const {setQuestoes,setCaderno} = useSimuladoContext()
+  const {getHistorico} = useFetchHistorico()
+  const {setQuestoes,setCaderno,setHistorico,setHistoricoId} = useSimuladoContext()
   const caderno = props.caderno
   const navigate = useNavigate();
   
   const handleClick=async ()=>{
-    const response = await getCaderno(caderno.id)
+    const response = await getCaderno(caderno.id);
+    const historico = await getHistorico(caderno.id);
+    if (historico.length>0){
+      
+      try{
+        setHistorico(historico[0].historico.split("")); 
+        setHistoricoId(historico[0].id);
+      }catch{
+        setHistorico([]);
+      }
+      
+    }else{
+      setHistorico([])
+    }
+
     if (!loading && response){
       setCaderno(caderno)
       setQuestoes(response.questoes)  
