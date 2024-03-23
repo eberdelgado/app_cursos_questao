@@ -71,3 +71,10 @@ export const ContainerComentario = styled.div`
     padding: 0.7rem;
     padding-bottom: 0%;
 `
+export const LabelQNR = styled.label`
+
+        border: 1px solid;
+        background-color: #dadada;
+        padding-left: 10px;
+`
+    

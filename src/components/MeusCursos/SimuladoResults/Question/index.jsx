@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import {
     Container,
-    Header,HeaderLabel,
-    Informacoes,InfoLabel,
+    Header,
+    HeaderLabel,
+    Informacoes,
+    InfoLabel,
     Enunciado,
-    BoxAlternativas,Alternativa
-    ,ContainerComentario
+    BoxAlternativas,
+    Alternativa,
+    ContainerComentario,
+    LabelQNR
 } from './styles'
 import { useSimuladoContext } from '../../../../hook/context/useSimuladoContext'
 import { useCursosContext } from '../../../../hook/context/useCursosContext'
 
 const Question = (props) => {
     const {cursoDetails} = useCursosContext()
-    const {simulado,questoes,historico,caderno} = useSimuladoContext()
-    const alternativaSelecionada = historico[props.index]
+    const {questoes,historico,caderno} = useSimuladoContext()
+    const alternativaSelecionada = Number(historico[props.index])
     const [questaoAtual] = useState(questoes[props.index]);
      // 1 acertou -- 2 errou -- 3 não respondida 
+    const [status,setStatus] = useState(props.status)
 
+       
+    console.log(!questaoAtual.resposta && props.is_correct!==3);
+    console.log( !questaoAtual.resposta && props.is_correct!==3 ? 1 : 
+        alternativaSelecionada === 1 && props.is_correct ===2 ? 2 : 3)
+/*
     const isCorrect =() =>{
         
         if(questaoAtual.isTrueOrFalse){
@@ -25,21 +35,23 @@ const Question = (props) => {
         }else{
             return (!questaoAtual.alternativas[alternativaSelecionada].is_correct)
         }
-    }
+    }*/
 
-    const statusError=isCorrect();
+    //const statusError=isCorrect();
     // status 1--certa // 2-errada // 3-não respondida
-    const status = statusError ? 2 : 
-                !alternativaSelecionada && alternativaSelecionada!==0 ? 3 : 1; 
+   // const status = statusError ? 2 : 
+     //           !alternativaSelecionada && alternativaSelecionada!==0 ? 3 : 1; 
     //console.log(questaoAtual.resposta);
     //console.log(alternativaSelecionada);
     //console.log((questaoAtual.resposta && alternativaSelecionada));
+   
 
     const render = ()=>{
         try{
         return <Container>
                 <Header>
                     <HeaderLabel>Questão {props.index+1}</HeaderLabel>
+                    {props.is_correct ===3 && <LabelQNR>Questao não respondida</LabelQNR>}
                 </Header>
                 <Informacoes>
                     <InfoLabel>Codigo: {questaoAtual.codigo} </InfoLabel>
@@ -50,19 +62,19 @@ const Question = (props) => {
                 </Informacoes>      
                 <Enunciado>{questaoAtual.enunciado} </Enunciado>
                 <BoxAlternativas>
-                { questaoAtual.isTrueOrFalse? 
+                { questaoAtual.isTrueOrFalse ? 
                         <>
                             <Alternativa    
-                            correct={ questaoAtual.resposta ? 1 :
-                                statusError && alternativaSelecionada===1 ? 2 
-                                : 3 }
+                            correct={ questaoAtual.resposta && props.is_correct!==3 ? 1 : 
+                                        alternativaSelecionada === 1 && props.is_correct ===2 ? 2 : 3
+                                }
                             >
                             Verdadeiro
                             </Alternativa>
                             <Alternativa
-                            correct={ !questaoAtual.resposta ? 1 :
-                                statusError && 0===alternativaSelecionada ? 2 
-                            : 3 }
+                            correct={ !questaoAtual.resposta && props.is_correct!==3 ? 1 : 
+                                alternativaSelecionada === 0 && props.is_correct ===2 ? 2 : 3
+                               }
                             >
                             Falso
                             </Alternativa>
@@ -72,13 +84,13 @@ const Question = (props) => {
                         <Alternativa 
                             key={index}
                             correct={ a.is_correct ? 1 :
-                                    statusError && index===alternativaSelecionada ? 2 
+                                    status && index===alternativaSelecionada ? 2 
                                     : 3 }>
                             
                             {a.alternativa}
                         </Alternativa>)
                 }
-                <ContainerComentario><h4>{questaoAtual.comentario}</h4></ContainerComentario>
+                {props.is_correct !==3 && <ContainerComentario><h4>{questaoAtual.comentario}</h4></ContainerComentario>}
                 </BoxAlternativas>
             </Container>
             
