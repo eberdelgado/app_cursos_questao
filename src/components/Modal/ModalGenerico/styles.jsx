@@ -22,6 +22,11 @@ export const Container = styled.div`
     h2{
         text-align: center;
     }
+    @media (max-width: 700px) {
+        width: 80vw;
+        padding-right: 15px;
+        transform: translate(10vw,20vh);
+    }
     
 `
 export const Button = styled.button`

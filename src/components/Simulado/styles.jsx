@@ -10,13 +10,19 @@ import { paletaSuave } from "../../entities/paleta";
   };
 */
 
+
+
 export const Container = styled.div`
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: ${paletaSuave.corFundo};
+    overflow: auto;
     //display: block;
     //height: 100vh; 
+    padding-bottom: 10px;
 `;
+
+
 
 export const Header = styled.div`
     display: grid;

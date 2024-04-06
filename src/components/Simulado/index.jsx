@@ -270,7 +270,7 @@ const Simulado = () => {
       )
 
     }catch(error){
-      console.error(error);
+      //console.error(error);
     }
 
   }

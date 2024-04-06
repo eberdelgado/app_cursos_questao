@@ -30,4 +30,5 @@ export const Content = styled.div`
     height: 88vh;
     display: flex;
     justify-content: center;
+    
 `;

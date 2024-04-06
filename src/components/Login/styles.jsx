@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 
 export const Image = styled.img`
-    width: 50vw;
+    //width: 50vw;
     height: 100vh;
+    @media (max-width: 750px){
+        display: absolute;
+        transform: translate(-30%, 00%);
+    }
 `
 export const Container = styled.div`
+   // display: flex;
+   @media (min-width: 1000px){
     display: flex;
+   }
 `
 export const DivRight = styled.div`
     display: flex;
@@ -15,6 +22,14 @@ export const DivRight = styled.div`
     align-items: center;
     margin: 15px;
     width: 100vw;
+    //z-index: 1000;
+    @media (max-width: 1000px){
+        display: absolute;
+        top: 0%;
+        left: 0%;
+        color: aliceblue;
+        transform: translate(00%, -200%);
+    }
 `
 
 export const FormLogin =styled.form`
@@ -24,6 +39,7 @@ export const FormLogin =styled.form`
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
 
     input {
         width: 100%;
@@ -40,6 +56,7 @@ export const FormLogin =styled.form`
         cursor: pointer;
         width: 100%;
     }
+   
 `
 
 export const PError = styled.p`

@@ -9,6 +9,7 @@ import { StageContextProvider } from "./context/StageContext";
 import { SimuladoContextProvider } from "./context/SimuladoContext";
 import { CursosContextProvider } from "./context/CursosContext";
 import { useUserContext } from "./hook/context/useUserContext";
+import SobrePage from "./pages/Sobre";
 
 
 
@@ -26,7 +27,8 @@ function App() {
                 <Route path="/simulado" element={isLog?<SimuladoPage />:<HomePage />} /> 
                 <Route path="/meuscursos" element={isLog?<MeusCursosPage />:<HomePage />} />
                 <Route path="/loja" element={<StorePage />} /> 
-                <Route path="/meuperfil" element={isLog?<MyProfile />:<HomePage />} />  
+                <Route path="/meuperfil" element={isLog?<MyProfile />:<HomePage />} /> 
+                <Route path="/sobre" element={<SobrePage />} />  
               </Routes>
             </Router>
           </CursosContextProvider>

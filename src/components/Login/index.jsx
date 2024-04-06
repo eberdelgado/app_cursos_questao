@@ -38,7 +38,9 @@ const Login = () => {
 
     return (
         <Container>
-            <Image src="farol.jpg" alt="" />
+            <div>
+                <Image src="farol.jpg" alt="" />
+            </div>
             
             <DivRight>
                 <h1>Farol Treinamentos</h1>
@@ -50,7 +52,8 @@ const Login = () => {
                     {loginFailed && <PError>Usuário ou senha errados, tente novamente!</PError>}
                     <button onClick={handleSubmit}>Entrar</button>
                     
-                    <p>Registrar-se</p>
+                    {//<p>Registrar-se</p>
+                    }
                 </FormLogin>
             </DivRight>
         </Container>
