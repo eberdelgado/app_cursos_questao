@@ -12,7 +12,7 @@ const Sobre = () => {
             <h1>Quem somos?</h1>
         </Header>
         <Content>
-            <img src="FarolLogoFundoTransparente.png" alt="" />
+            <img src="farollogo.png" alt="" />
             <h2>Farol treinamentos é uma organização que busca estimular a aquisição de conhecimentos por meio de capacitação dinâmica.</h2>
             <h2>Atendimento:</h2>
             <h3>WhatsApp: (44) 99905-7713</h3>
