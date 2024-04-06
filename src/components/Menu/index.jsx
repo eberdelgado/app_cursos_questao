@@ -47,7 +47,7 @@ const Menu = (props) => {
             <MobileMenu/>
             <DivMenu>
             <LabelImg>
-                    <img src="FarolLogoFundoTransparente.png" alt="" />
+                    <img src="farollogo.png" alt="" />
             </LabelImg>
                 
                 
