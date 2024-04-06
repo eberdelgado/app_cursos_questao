@@ -35,6 +35,24 @@ export const LabelOption = styled.label`
     }
 `
 
+export const LabelImg = styled.div`
+  //color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  
+ 
+  img{
+    height: 50%;
+    width: 100%;
+    border-radius:10px 0px 00px 0px;
+    margin-left: 2px;
+  }
+    //padding: 5px;
+    //margin: 7px;
+`
+
  export const DivLogin = styled.div`
   margin-right: 20px;
   display: flex;
@@ -54,7 +72,7 @@ export const DivMenu = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     display: none;
   }
 `
