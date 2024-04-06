@@ -1,1 +1,1 @@
-export const url="http://farolbackend-e45fbfbe88d3.herokuapp.com/"
+export const url="https://farolbackend-e45fbfbe88d3.herokuapp.com/"
