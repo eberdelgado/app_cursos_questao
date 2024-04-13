@@ -21,30 +21,7 @@ const Question = (props) => {
     const [questaoAtual] = useState(questoes[props.index]);
      // 1 acertou -- 2 errou -- 3 não respondida 
     const [status,setStatus] = useState(props.status)
-
-       
-    console.log(!questaoAtual.resposta && props.is_correct!==3);
-    console.log( !questaoAtual.resposta && props.is_correct!==3 ? 1 : 
-        alternativaSelecionada === 1 && props.is_correct ===2 ? 2 : 3)
-/*
-    const isCorrect =() =>{
-        
-        if(questaoAtual.isTrueOrFalse){
-            return questaoAtual.resposta!==alternativaSelecionada;
-            
-        }else{
-            return (!questaoAtual.alternativas[alternativaSelecionada].is_correct)
-        }
-    }*/
-
-    //const statusError=isCorrect();
-    // status 1--certa // 2-errada // 3-não respondida
-   // const status = statusError ? 2 : 
-     //           !alternativaSelecionada && alternativaSelecionada!==0 ? 3 : 1; 
-    //console.log(questaoAtual.resposta);
-    //console.log(alternativaSelecionada);
-    //console.log((questaoAtual.resposta && alternativaSelecionada));
-   
+ 
 
     const render = ()=>{
         try{

@@ -51,7 +51,7 @@ const SimuladoResults = () => {
     try{
       return(
         acertos.map((a,index)=>{
-          return <Question is_correct={a} index={index}/>
+          return <Question is_correct={a} key={index} index={index}/>
         })
       )
     }catch{

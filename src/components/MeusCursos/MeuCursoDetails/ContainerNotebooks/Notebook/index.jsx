@@ -8,7 +8,7 @@ import { useFetchHistorico } from '../../../../../hook/fetch/useFetchHistorico'
 const Notebook = (props) => {
   const {getCaderno,loading}=useFetchCadernos()
   const {getHistorico} = useFetchHistorico()
-  const {setQuestoes,setCaderno,setHistorico,setHistoricoId} = useSimuladoContext()
+  const {setQuestoes,setCaderno,setHistorico,setHistoricoId,setHistoricoCompleto} = useSimuladoContext()
   const caderno = props.caderno
   const navigate = useNavigate();
   
@@ -18,9 +18,11 @@ const Notebook = (props) => {
     if (historico.length>0){
       
       try{
+        
         setHistorico(historico[0].historico.split("")); 
         setHistoricoId(historico[0].id);
-      }catch{
+        setHistoricoCompleto(historico[0]);
+        }catch{
         setHistorico([]);
       }
       

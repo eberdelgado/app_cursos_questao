@@ -25,9 +25,11 @@ import { useFetchHistorico } from '../../hook/fetch/useFetchHistorico';
 import {useUserContext } from '../../hook/context/useUserContext';
 const Simulado = () => {
   //Context
-  const {questoes,historico,historicoId,setHistorico,caderno} = useSimuladoContext();
+  const {questoes,historico,historicoId,setHistorico,historicoCompleto,caderno} = useSimuladoContext();
   const {cursoDetails} = useCursosContext();
   const {setMeusCursosStage} =useStageContext();
+  
+  
  
   //variables
   const [numeroQuestao,setNumeroQuestao] = useState(0);
@@ -95,7 +97,11 @@ const Simulado = () => {
       }))
      
     }else{
-      setAlternativaSelecionada(questoes.map(()=>{return "n"}))
+      try{
+        setAlternativaSelecionada(questoes.map(()=>{return "n"}))
+      }catch{
+
+      }
     }
   },[])
 
@@ -155,7 +161,7 @@ const Simulado = () => {
       historico:alternativaSelecionada.map(h=>String(h)).join('')
     }
     
-    if(!historicoId){
+    if(!historicoId || (historicoCompleto.caderno !== caderno.id)){
       createHistorico(obj);
     }else{
       updateHistorico(historicoId,obj);
