@@ -8,6 +8,7 @@ export const Container = styled.div`
   margin: 10px;
   padding: 5px;
   background-color:${paleta1.White};
+  align-items: center;
   p{
         margin: 10px ;
     }

@@ -5,6 +5,8 @@ body{
     /*font-family: 'Arial', sans-serif; /* Especifica a fonte padrão para o corpo */
     font-family: serif;
     height: 100vh;
+    text-align: justify;
+
     color: #333333;
   }
 

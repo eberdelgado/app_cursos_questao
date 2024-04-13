@@ -8,6 +8,7 @@ export const SimuladoContextProvider = ({ children }) => {
     const [questoes, setQuestoes] = useState();
     const [historico,setHistorico] = useState([]);
     const [historicoId,setHistoricoId] = useState();
+    const [historicoCompleto,setHistoricoCompleto] = useState();
     const [caderno,setCaderno] = useState();
     const [statusQuestion,setStatusQuestion] = useState([]); // 1 resposta correta -- 2 resposta errada -- 3 sem resposta
 
@@ -19,7 +20,8 @@ export const SimuladoContextProvider = ({ children }) => {
         caderno,setCaderno,
         statusQuestion,setStatusQuestion,
         historico,setHistorico,
-        historicoId,setHistoricoId
+        historicoId,setHistoricoId,
+        historicoCompleto,setHistoricoCompleto
               }}
     >
       {children}
