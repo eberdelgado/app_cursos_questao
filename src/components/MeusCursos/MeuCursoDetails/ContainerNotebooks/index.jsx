@@ -17,7 +17,9 @@ const ContainerNotebooks = () => {
   const renderNotebooks=()=>{
     try{
       return (
-        cursoDetails.cursos.caderno.map((c,index)=>( <Notebook key={index} caderno={c}/>))
+        cursoDetails.cursos.caderno.sort((a,b)=>{
+          return a.codigo.localeCompare(b.codigo)
+        }).map((c,index)=>( <Notebook key={index} caderno={c}/>))
       )
     }catch(error){
       return (<p>Nenhum cardeno encontrado</p>)
