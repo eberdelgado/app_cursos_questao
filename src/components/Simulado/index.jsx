@@ -92,7 +92,7 @@ const Simulado = () => {
         return q.isTrueOrFalse ? 
                 ( (historico[index]==='n')? null:
                 (Number(q.resposta) === Number(historico[index]) ? 1:2) )
-                :( (historico[index]==='n')? null : q.alternativas[historico[index]].is_correct ? 1:2 ); 
+                :( (historico[index]==='n')? null : q.alternativa[historico[index]].isCorrect ? 1:2 ); 
 
       }))
      
@@ -129,7 +129,7 @@ const Simulado = () => {
       let aux=[...stageComentario];   
       aux[numeroQuestao]= questaoAtual.isTrueOrFalse ? 
                           (questaoAtual.resposta && alternativaSelecionada[numeroQuestao] ? 1:2)
-                          : (questaoAtual.alternativas[alternativaSelecionada[numeroQuestao]].is_correct ? 1:2 ); 
+                          : (questaoAtual.alternativa[alternativaSelecionada[numeroQuestao]].isCorrect ? 1:2 ); 
       
       setStageComentario(aux);
     }
@@ -227,7 +227,7 @@ const Simulado = () => {
             <InfoLabel>Concurso: {cursoDetails.cursos.concurso} </InfoLabel>
             <InfoLabel>Ano: {questaoAtual.ano} </InfoLabel>
           </Informacoes>      
-          <Enunciado>{questaoAtual.enunciado} </Enunciado>
+          <Enunciado>{questaoAtual.enunciado}</Enunciado>
           <BoxAlternativas>
             { questaoAtual.isTrueOrFalse? 
             <>
@@ -251,15 +251,15 @@ const Simulado = () => {
               </Alternativa>
             </>
               :
-              questaoAtual.alternativas.map((a,index)=>
+              questaoAtual.alternativa.map((a,index)=>
                 <Alternativa 
                   key={index}
-                  correct={ a.is_correct && stageComentario[numeroQuestao] ? 1 :
+                  correct={ a.isCorrect && stageComentario[numeroQuestao] ? 1 :
                             stageComentario[numeroQuestao]===2 && index===Number(alternativaSelecionada[numeroQuestao]) ? 2 
                             : 3 }
                   select={index===Number(alternativaSelecionada[numeroQuestao])} 
                   onClick={()=>stageComentario[numeroQuestao] ?"":handleSelectAlternativa(index)}>
-                    {a.alternativa}
+                    {a.enunciado}
                 </Alternativa>)
             }
           </BoxAlternativas>

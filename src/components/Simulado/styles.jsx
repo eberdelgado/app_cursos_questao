@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { paletaSuave } from "../../entities/paleta";
+import { paletaSuave,paleta1 } from "../../entities/paleta";
 /*const paletaSuave = {
     corPrincipal: '#8ac4d0',   // Azul Pastel
     corSecundaria: '#f8eceb',  // Rosa Pálido
@@ -13,13 +13,32 @@ import { paletaSuave } from "../../entities/paleta";
 
 
 export const Container = styled.div`
+
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: ${paletaSuave.corFundo};
-    overflow: auto;
+    overflow-y: auto;
     //display: block;
     //height: 100vh; 
     padding-bottom: 10px;
+    height: 100vh;
+    &::-webkit-scrollbar {
+width: 12px; /* Largura da barra de rolagem vertical */
+}
+
+&::-webkit-scrollbar-thumb {
+background-color: #888; /* Cor do "polegar" (a parte que você arrasta) */
+border-radius: 6px; /* Borda arredondada do "polegar" */
+}
+
+&::-webkit-scrollbar-track {
+background-color: ${paleta1.CinzaClaro}; /* Cor da trilha da barra de rolagem */
+border-radius: 6px; /* Borda arredondada da trilha */
+}
+
+&::-webkit-scrollbar-thumb:hover {
+background-color: #555; /* Cor do "polegar" ao passar o mouse sobre ele */
+}
 `;
 
 
@@ -67,7 +86,7 @@ export const Enunciado = styled.div`
     margin-top: 0px;
     padding: 0.7rem;
     border-bottom: solid 1.5px;
-    font-weight: bold;
+    //font-weight: bold;
     text-align: justify;
 `;
 
@@ -80,6 +99,7 @@ export const ContainerButton = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-right: 30px;
+    padding-bottom: 20px;
 `;
 
 export const Alternativa = styled.div`
