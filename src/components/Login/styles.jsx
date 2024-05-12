@@ -23,12 +23,14 @@ export const DivRight = styled.div`
     margin: 15px;
     width: 100vw;
     //z-index: 1000;
+    text-align: left;
     @media (max-width: 1000px){
         display: absolute;
         top: 0%;
         left: 0%;
         color: aliceblue;
         transform: translate(00%, -200%);
+        
     }
 `
 

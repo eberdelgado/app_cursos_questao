@@ -57,14 +57,14 @@ const Question = (props) => {
                             </Alternativa>
                         </>
                             :
-                        questaoAtual.alternativas.map((a,index)=>
+                        questaoAtual.alternativa.map((a,index)=>
                         <Alternativa 
                             key={index}
-                            correct={ a.is_correct ? 1 :
-                                    status && index===alternativaSelecionada ? 2 
+                            correct={ a.isCorrect && props.is_correct!==3 ? 1 :
+                                    props.is_correct ===2 && index===alternativaSelecionada ? 2 
                                     : 3 }>
                             
-                            {a.alternativa}
+                            {a.enunciado}
                         </Alternativa>)
                 }
                 {props.is_correct !==3 && <ContainerComentario><h4>{questaoAtual.comentario}</h4></ContainerComentario>}

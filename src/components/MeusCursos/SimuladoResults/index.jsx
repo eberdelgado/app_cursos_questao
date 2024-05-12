@@ -29,7 +29,8 @@ const SimuladoResults = () => {
               auxAcertos[index]=2;
             }
           }else{
-            if(questoes[index].alternativa[Number(h)].is_correct){
+           
+            if(questoes[index].alternativa[Number(h)].isCorrect){
               auxAcertos[index]=1;
             }else{
               auxAcertos[index]=2;
