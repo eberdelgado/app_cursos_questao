@@ -5,9 +5,9 @@ export const paragrafo = (texto)=>{
   return(
     textoSepardo.map((t,index) =>  {
       if (index !== tamanho-1)
-        return t;
+        return [t,<br/>];
       else
-        return [<br/>, t];
+        return t;
     } )
   )
 }
