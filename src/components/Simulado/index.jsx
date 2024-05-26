@@ -272,7 +272,7 @@ const Simulado = () => {
             <Button onClick={handleProximo} bgcolor={paletaSuave.corSecundaria}>{numeroQuestao<(totalQuestao-1)?"Proxima":"Finalizar"}</Button>
           </ContainerButton>
           {(stageComentario[numeroQuestao]===1 || stageComentario[numeroQuestao]===2 ) ? 
-            <ContainerComentario><h4>{questaoAtual.comentario}</h4></ContainerComentario>
+            <ContainerComentario><h4>{paragrafo(questaoAtual.comentario)}</h4></ContainerComentario>
             :""}
         </Container>
       </>

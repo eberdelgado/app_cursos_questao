@@ -13,6 +13,7 @@ import {
 } from './styles'
 import { useSimuladoContext } from '../../../../hook/context/useSimuladoContext'
 import { useCursosContext } from '../../../../hook/context/useCursosContext'
+import { paragrafo } from '../../../../utils/functions'
 
 const Question = (props) => {
     const {cursoDetails} = useCursosContext()
@@ -37,7 +38,7 @@ const Question = (props) => {
                     <InfoLabel>Concurso: {cursoDetails.cursos.concurso} </InfoLabel>
                     <InfoLabel>Ano: {questaoAtual.ano} </InfoLabel>
                 </Informacoes>      
-                <Enunciado>{questaoAtual.enunciado} </Enunciado>
+                <Enunciado>{paragrafo(questaoAtual.enunciado)} </Enunciado>
                 <BoxAlternativas>
                 { questaoAtual.isTrueOrFalse ? 
                         <>
@@ -67,7 +68,7 @@ const Question = (props) => {
                             {a.enunciado}
                         </Alternativa>)
                 }
-                {props.is_correct !==3 && <ContainerComentario><h4>{questaoAtual.comentario}</h4></ContainerComentario>}
+                {props.is_correct !==3 && <ContainerComentario><h4>{paragrafo(questaoAtual.comentario)}</h4></ContainerComentario>}
                 </BoxAlternativas>
             </Container>
             
