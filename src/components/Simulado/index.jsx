@@ -23,6 +23,8 @@ import { useCursosContext } from '../../hook/context/useCursosContext'
 import Modal from '../Modal/ModalGenerico';
 import { useFetchHistorico } from '../../hook/fetch/useFetchHistorico';
 import {useUserContext } from '../../hook/context/useUserContext';
+import { paragrafo } from '../../utils/functions';
+
 const Simulado = () => {
   //Context
   const {questoes,historico,historicoId,setHistorico,historicoCompleto,caderno} = useSimuladoContext();
@@ -52,7 +54,8 @@ const Simulado = () => {
 
   //fetches
   const {createHistorico,updateHistorico} = useFetchHistorico();
-
+  
+  
 
   /*//////////////////////////////////////////////////////////////////////////
                              use effects       
@@ -227,7 +230,7 @@ const Simulado = () => {
             <InfoLabel>Concurso: {cursoDetails.cursos.concurso} </InfoLabel>
             <InfoLabel>Ano: {questaoAtual.ano} </InfoLabel>
           </Informacoes>      
-          <Enunciado>{questaoAtual.enunciado}</Enunciado>
+          <Enunciado>{paragrafo(questaoAtual.enunciado)}</Enunciado>
           <BoxAlternativas>
             { questaoAtual.isTrueOrFalse? 
             <>
@@ -287,3 +290,4 @@ const Simulado = () => {
 }
 
 export default Simulado
+
