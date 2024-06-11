@@ -21,8 +21,8 @@ const StoreCursoDetails = () => {
             <p>Preço: R$ {cursoDetails.valor}</p>
             {//<button>Adquirir Curso</button>
             }
-            <p>Para adquirir esse curso entre em contato: Telefone: (44) 9 9905-7713</p>
-            <p>Email: atendimento.faroltreinamentos@gmail.com</p>
+            <p>Para adquirir esse curso entre em contato: Telefone: (47) 9 9998-4938</p>
+            <p>Email: faroltreinamentos2024@gmail.com</p>
         </Contents>
     </Container>
   )
