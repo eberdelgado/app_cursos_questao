@@ -21,10 +21,10 @@ export const Header=styled.div`
 
 export const Contents = styled.div`
   display: grid;
-  grid-template-rows: auto 100%; 
+  //grid-template-rows: auto 100%; 
   //border-bottom: solid 2px;
   width: 100%;
-  height: 80%;
+  height: 100%;
   //overflow: hidden;
 `
 
